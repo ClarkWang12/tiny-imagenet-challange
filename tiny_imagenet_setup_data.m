@@ -82,7 +82,12 @@ for name = imdb.images.name
   path = fullfile(dataDir, name) ;
   im = imread(char(path)) ;
   im = single(im) ;
-  data = cat(4, data, im) ;
+  
+  if (size(im, 3) == 1)
+    data = cat(4, data, cat(3, im, im, im)) ; % is this correct?
+  else
+    data = cat(4, data, im);
+  end
   
   progress = progress + 1 ;
 end
