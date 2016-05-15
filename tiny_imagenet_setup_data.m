@@ -71,7 +71,7 @@ imdb.images.label = horzcat(imdb.images.label, labels) ;
 %
 % Load the data
 %
-data = {} ;
+data = [] ;
 
 %h = waitbar(0,'Loading data...') ;
 progress = 1 ;
@@ -82,7 +82,7 @@ for name = imdb.images.name
   path = fullfile(dataDir, name) ;
   im = imread(char(path)) ;
   im = single(im) ;
-  data{end+1} = im ;
+  data = cat(4, data, im) ;
   
   progress = progress + 1 ;
 end
