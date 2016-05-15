@@ -1,6 +1,7 @@
 setup('useGpu', true);
 
-imdb = load('data/imdb.mat').imdb;
+imdb = load('data/imdb.mat');
+imdb = imdb.imdb;
 
 net = initializeCnn() ;
 net = addCustomLossLayer(net, @l2LossForward, @l2LossBackward) ;
