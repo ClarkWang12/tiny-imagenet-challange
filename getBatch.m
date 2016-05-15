@@ -4,5 +4,5 @@ function [im, label] = getBatch(imdb, batch)
 %   and labels LABEL from IMDB according to the list of images
 %   BATCH.
 
-im = imdb.images.data(batch) ;
+im = imdb.images.data(:,:,:,batch) ;
 label = imdb.images.label(batch) ;
