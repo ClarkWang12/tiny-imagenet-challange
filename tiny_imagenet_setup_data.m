@@ -73,12 +73,12 @@ imdb.images.label = horzcat(imdb.images.label, labels) ;
 %
 data = {} ;
 
-h = waitbar(0,'Loading data...') ;
+%h = waitbar(0,'Loading data...') ;
 progress = 1 ;
 for name = imdb.images.name
 
-  waitbar(progress/length(imdb.images.name), h , sprintf('%.2f%% along...', 100 * progress/length(imdb.images.name))) ;
-
+  %waitbar(progress/length(imdb.images.name), h , sprintf('%.2f%% along...', 100 * progress/length(imdb.images.name))) ;
+  disp(progress) ;
   path = fullfile(dataDir, name) ;
   im = imread(char(path)) ;
   im = single(im) ;
@@ -86,6 +86,6 @@ for name = imdb.images.name
   
   progress = progress + 1 ;
 end
-close(h) ;
+%close(h) ;
 
 imdb.images.data = data ;
