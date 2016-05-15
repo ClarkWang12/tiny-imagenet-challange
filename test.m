@@ -1,0 +1,1 @@
+imdb = load('data/imdb.mat');
